@@ -5,23 +5,23 @@ class ApplicationController < Sinatra::Base
   get "/todos/" do
     todos.to_json
   end
+end 
+ # post "/todos/" do
+   # todo = Todo.create(title: params[:title])
+    #todo.to_json
 
-  post "/todos/" do
-    #message = Message.create(body: params[:body], username: params[:username])
-    message.to_json
+ # end
 
-  end
-
-  patch "/todos/:id" do
-    #todo = Message.find(params[:id])
-    #todo.update(body: params[:body])
-    todo.to_json
-  end
-  
-  delete "/todos/:id" do
+ # patch "/todos/:id" do
    # todo = Todo.find(params[:id])
-    #todo.destroy
-    todo.to_json
-  end
-end
+   # todo.update(title: params[:title])
+    #todo.to_json
+  #end
+  
+  #delete "/todos/:id" do
+  #  todo = Todo.find(params[:id])
+   # todo.destroy
+    #todo.to_json
+  #end
+#end
 

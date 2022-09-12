@@ -7,14 +7,14 @@ class Application
       # projects get/read 
     if req.path.match(/todos/) && req.get? #controller interprates the request given from the front-end
         #(:include => :title)
-      #check if requesting all projects or an individual project
+      #check if requesting all todos or an individual todo
       if req.path.split("/todos/").length === 1 
         # retrieve information from model and send back information to the front-end
         return [200, { 'Content-Type' => 'application/json' }, [ {:message => "todos successfully requested", :todos => Todo.all}.to_json]]
       else 
         todo = Todo.find_by_path(req.path, "/projects/")
         return [200, { 'Content-Type' => 'application/json' }, [ {:message => "todo successfully requested", :todos => Todo}.to_json]]
-      end #check if all projects or specific project
+      end #check if all todos or specific todo
       
   
   
@@ -40,10 +40,10 @@ class Application
           else
             return [422, {"Content-Type" => "application/json"}, [{error: "todo not updated. Invalid data."}.to_json]]
           end
-          #if: project was updated
+          #if: todo was updated
         else
           return [404, {"Content-Type" => "application/json"}, [{error: "todo not found."}.to_json]]
-        end #if : project exists
+        end #if : todo exists
   
       # todo delete
       elsif req.path.match(/todos/) && req.delete?
@@ -53,7 +53,7 @@ class Application
           return [200, {"Content-Type" => "application/json"}, [{message: "todo successfully deleted", todo: todo}.to_json]]
         else
           return [404, {"Content-Type" => "application/json"}, [{error: "todo not found."}.to_json]]
-        end #if : project exists
+        end #if : todo exists
     end
 end
 end

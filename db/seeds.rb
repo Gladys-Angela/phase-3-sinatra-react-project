@@ -5,7 +5,7 @@ User.destroy_all
 User.create(username: "TestUser", email_address: "test@email.com", password: "123")
 User.create(username: "EllenRipley", email_address: "ellen.ripley@protonmail.com", password: "123")
 User.create(username: "SarahConnor", email_address: "sarah.connor@protonmail.com", password: "abc")
-User.create(username: "SidneyPrescott", email_address: "sidney.prescott@protonmail.com", password: "abc")
+User.create(username: "Gladys Kamau", email_address: "gladysangela@gmail.com", password: "wanjiru")
 
 
 TodoCategory.destroy_all
